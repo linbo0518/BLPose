@@ -16,7 +16,7 @@ dist
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# pyenv
+# Pyenv
 .python-version
 
 # C Extension
@@ -26,4 +26,5 @@ dist
 /train/
 /models/
 /notebook/
-release.sh
+/test/outputs
+TODO.md
