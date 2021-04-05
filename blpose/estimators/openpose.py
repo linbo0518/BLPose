@@ -118,7 +118,7 @@ class OpenPoseV1(nn.Module):
         paf_ch = n_limbs * 2
         heat_ch = n_keypoints + 1
         n_stages = 6
-        self.backbone = get_backbone(backbone)
+        self.backbone = get_backbone(backbone, stride=8)
         _, b_ch, _, _ = get_module_output_shape(self.backbone)
         self.intro = _get_intro(b_ch, 128)
         self.stage1 = Stage1V1(128, paf_ch, heat_ch)
@@ -226,7 +226,7 @@ class OpenPoseV2(nn.Module):
         heat_ch = n_keypoints + 1
         paf_stages = 4
         heat_stages = 2
-        self.backbone = get_backbone(backbone)
+        self.backbone = get_backbone(backbone, stride=8)
         _, b_ch, _, _ = get_module_output_shape(self.backbone)
         self.intro = _get_intro(b_ch, 128)
         self.paf_stage1 = Stage1V2(128, paf_ch)

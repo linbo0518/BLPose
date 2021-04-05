@@ -20,6 +20,7 @@ dist
 .python-version
 
 # C Extension
+*.cpp
 *.so
 
 # Project
